@@ -2,11 +2,16 @@
 
 #include "main.hpp"
 
-int main () {
+int main (int argc, char *argv[]) {
    std::ifstream vectorFile;
    std::vector<unsigned int> vec;
 
-   vectorFile.open ("../test_cases/vector5.txt");
+   if (argc > 1)
+      vectorFile.open (argv[1]);
+   else {
+      std::cout << "\nWrong syntax. Use:\n$ main test_cases/test.txt" << std::endl;
+      return 1;
+   }
 
    while (vectorFile.peek() != EOF)
       vec.push_back(vectorFile.get());
@@ -20,13 +25,13 @@ int main () {
     std::cout << std::endl;
 
    // Sort it
-//#ifdef SELECTION
-//   SelectionSort::sort(vec);
-//#endif
+#ifdef SELECTION
+   Sort::selection(vec);
+#endif
 
-//#ifdef INSERTION
-   InsertionSort::sort(vec);
-//#endif
+#ifdef INSERTION
+   Sort::insertion(vec);
+#endif
 
    // Print it sorted
    std::cout << "\nThe sorted vector:" << std::endl;
