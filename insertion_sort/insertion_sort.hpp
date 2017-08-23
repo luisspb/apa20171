@@ -5,9 +5,8 @@
 
 # include <vector>
 
-class InsertionSort {
-public:
-   void sort (std::vector<unsigned int>& v);
-};
+namespace Sort {
+   void insertion (std::vector<unsigned int>& v);
+}
 
 #endif

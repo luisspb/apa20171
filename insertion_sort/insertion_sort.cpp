@@ -2,7 +2,7 @@
 
 #include "insertion_sort.hpp"
 
-void InsertionSort::sort (std::vector<unsigned int>& v) {
+void Sort::insertion (std::vector<unsigned int>& v) {
    unsigned int vsize;
    unsigned int i, aux;
 

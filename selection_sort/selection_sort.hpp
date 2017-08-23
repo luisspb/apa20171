@@ -5,9 +5,8 @@
 
 # include <vector>
 
-class SelectionSort {
-public:
-   void sort (std::vector<unsigned int>& v);
-};
+namespace Sort {
+   void selection (std::vector<unsigned int>& v);
+}
 
 #endif

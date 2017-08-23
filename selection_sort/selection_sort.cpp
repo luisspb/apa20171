@@ -2,7 +2,7 @@
 
 #include "selection_sort.hpp"
 
-void SelectionSort::sort (std::vector<unsigned int>& v) {
+void Sort::selection (std::vector<unsigned int>& v) {
    unsigned int vsize;
    unsigned int min;
 
