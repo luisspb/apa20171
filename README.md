@@ -5,7 +5,8 @@ Aluno: Jorgeluis Guerra
 Professor: Gilberto de Sousa Filho  
 
 Para rodar os testes basta dentro da pasta "main" e executar o "make":  
-$ make SORTING_TYPE  
+$ make SORT=SORTING_TYPE  
+
 Onde SORTING_TYPE é algum dos algoritmos de sorting já implementados e adicionados ao programa principal. O programa gerado deverá então ordenar o vetor de testes segundo o algoritmo escolhido no comando "make".  
 
 Sintaxe do main:  
