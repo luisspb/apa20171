@@ -5,38 +5,41 @@
 int main (int argc, char *argv[]) {
    std::ifstream vectorFile;
    std::vector<unsigned int> vec;
+   unsigned int i;
 
    if (argc > 1)
       vectorFile.open (argv[1]);
    else {
-      std::cout << "\nWrong syntax. Use:\n$ main test_cases/test.txt" << std::endl;
+      std::cout << "\nWrong syntax. Use:\n$ main ../test_cases/test_file.txt" << std::endl;
       return 1;
    }
 
-   while (vectorFile.peek() != EOF)
-      vec.push_back(vectorFile.get());
+   while (vectorFile >> i)
+      vec.push_back(i);
 
    vectorFile.close();
 
    // Print it unsorted
    std::cout << "\nThe unsorted vector:" << std::endl;
-   for (unsigned int i = 0; i < vec.size(); i++)
+   for (i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
     std::cout << std::endl;
 
    // Sort it
 #ifdef SELECTION
+   std::cout << "\nSelection sorting selected." << std::endl;
    Sort::selection(vec);
 #endif
 
 #ifdef INSERTION
+   std::cout << "\nInsertion sorting selected." << std::endl;
    Sort::insertion(vec);
 #endif
 
    // Print it sorted
    std::cout << "\nThe sorted vector:" << std::endl;
-   for (unsigned int i = 0; i < vec.size(); i++)
-      std::cout << vec[i];
+   for (i = 0; i < vec.size(); i++)
+      std::cout << vec[i] << " ";
    std::cout << std::endl;
 
    return 0;
