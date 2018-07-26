@@ -1,4 +1,4 @@
-# apa20171
+# apa20181
 
 Repositório dos códigos dos exercícios e projetos da disciplina de Análise e Projeto de Algoritmos 2018.1.  
 Aluno: Jorgeluis Guerra  
