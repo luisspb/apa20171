@@ -2,9 +2,10 @@
 
 #include "selection_sort.hpp"
 
-void Sort::selection (std::vector<unsigned int>& v) {
+void Sort::selection (std::vector<int>& v) {
    unsigned int vsize;
-   unsigned int min, jmin, j;
+   unsigned int jmin, j;
+   int min;
 
    vsize = v.size();
 

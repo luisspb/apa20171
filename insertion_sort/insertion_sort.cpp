@@ -2,9 +2,9 @@
 
 #include "insertion_sort.hpp"
 
-void Sort::insertion (std::vector<unsigned int>& v) {
+void Sort::insertion (std::vector<int>& v) {
    unsigned int vsize;
-   unsigned int aux;
+   int aux;
    int i;
 
    vsize = v.size();

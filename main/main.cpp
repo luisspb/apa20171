@@ -4,13 +4,13 @@
 
 int main (int argc, char *argv[]) {
    std::ifstream vectorFile;
-   std::vector<unsigned int> vec;
+   std::vector<int> vec;
    unsigned int i;
 
    if (argc > 1)
       vectorFile.open (argv[1]);
    else {
-      std::cout << "\nWrong syntax. Use:\n$ main ../test_cases/test_file.txt" << std::endl;
+      std::cout << "\nWrong syntax. Use:\n$ ./main ../test_cases/test_file.txt" << std::endl;
       return 1;
    }
 
@@ -26,6 +26,12 @@ int main (int argc, char *argv[]) {
     std::cout << std::endl;
 
    // Sort it
+#ifdef NONE
+   std::cout << "\nNo sorting algorithm selected!" << std::endl;
+   std::cout << "Aborting..." << std::endl;
+   return 1;
+#endif
+
 #ifdef SELECTION
    std::cout << "\nSelection sorting selected." << std::endl;
    Sort::selection(vec);
