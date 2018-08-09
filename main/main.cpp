@@ -25,6 +25,9 @@ int main (int argc, char *argv[]) {
       std::cout << vec[i] << " ";
     std::cout << std::endl;
 
+   // Algorithm time measurement - start
+   auto start = std::chrono::high_resolution_clock::now();
+
    // Sort it
 #ifdef NONE
    std::cout << "\nNo sorting algorithm selected!" << std::endl;
@@ -42,11 +45,29 @@ int main (int argc, char *argv[]) {
    Sort::insertion(vec);
 #endif
 
+   // Algorithm time measurement - end
+   auto end = std::chrono::high_resolution_clock::now();
+
    // Print it sorted
    std::cout << "\nThe sorted vector:" << std::endl;
    for (i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
    std::cout << std::endl;
+
+   // Print runtime measurement
+   std::cout << "\nRuntime: ";
+   auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+   if (duration)
+      std::cout << duration << " s " << std::endl;
+   else {
+      duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+      if (duration)
+         std::cout << duration << " ms " << std::endl;
+      else {
+         duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+         std::cout << duration << " ns " << std::endl;
+      }
+   }
 
    return 0;
 }
