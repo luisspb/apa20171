@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
    std::ifstream vectorFileIn;
    std::ofstream vectorFileOut;
    std::vector<int> vec;
-   unsigned int i;
+   unsigned int i, vecSize;
 
    if (argc > 1)
       vectorFileIn.open (argv[1]);
@@ -14,6 +14,8 @@ int main (int argc, char *argv[]) {
       std::cout << "\nWrong syntax. Use:\n$ ./main ../test_cases/test_file.txt" << std::endl;
       return 1;
    }
+
+   vectorFileIn >> vecSize;
 
    while (vectorFileIn >> i)
       vec.push_back(i);
