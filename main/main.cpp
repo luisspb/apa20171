@@ -3,27 +3,32 @@
 #include "main.hpp"
 
 int main (int argc, char *argv[]) {
-   std::ifstream vectorFile;
+   std::ifstream vectorFileIn;
+   std::ofstream vectorFileOut;
    std::vector<int> vec;
    unsigned int i;
 
    if (argc > 1)
-      vectorFile.open (argv[1]);
+      vectorFileIn.open (argv[1]);
    else {
       std::cout << "\nWrong syntax. Use:\n$ ./main ../test_cases/test_file.txt" << std::endl;
       return 1;
    }
 
-   while (vectorFile >> i)
+   while (vectorFileIn >> i)
       vec.push_back(i);
 
-   vectorFile.close();
+   vectorFileIn.close();
 
+#ifdef DEBUG
    // Print it unsorted
    std::cout << "\nThe unsorted vector:" << std::endl;
    for (i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
     std::cout << std::endl;
+#else
+   std::cout << "\nUnsorted vector read." << std::endl;
+#endif
 
    // Algorithm time measurement - start
    auto start = std::chrono::high_resolution_clock::now();
@@ -48,11 +53,21 @@ int main (int argc, char *argv[]) {
    // Algorithm time measurement - end
    auto end = std::chrono::high_resolution_clock::now();
 
+   // Output the sorted vector to a file
+   vectorFileOut.open ("vectorOut.txt");
+   for (i = 0; i < vec.size(); i++)
+      vectorFileOut << vec[i] << " ";
+   vectorFileOut << std::endl;
+
+#ifdef DEBUG
    // Print it sorted
    std::cout << "\nThe sorted vector:" << std::endl;
    for (i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
    std::cout << std::endl;
+#else
+   std::cout << "\nSorted vector wrote." << std::endl;
+#endif
 
    // Print runtime measurement
    std::cout << "\nRuntime: ";

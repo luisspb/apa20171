@@ -22,11 +22,11 @@ $(MAIN): $(notdir $(SOURCES:.cpp=.d)) $(notdir $(SOURCES:.cpp=.o))
 
 .PHONY: clean
 
-debug: CFLAGS += -ggdb
+debug: CFLAGS += -ggdb -DDEBUG
 debug: clean $(MAIN)
 
 clean:
-	-rm -f *.d *.o *.gch $(MAIN)
+	-rm -f *.d *.o *.gch *.txt $(MAIN)
 
 ifneq ($(MAKECMDGOALS), clean)
       -include $(SOURCES:.cpp=.d)
