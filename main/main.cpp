@@ -57,6 +57,11 @@ int main (int argc, char *argv[]) {
    Sort::mergeSort(vec, 0, vec.size()-1);
 #endif
 
+#ifdef QUICK
+   std::cout << "\nQuick sorting selected." << std::endl;
+   Sort::quick(vec, 0, vec.size()-1);
+#endif
+
    // Algorithm time measurement - end
    auto end = std::chrono::high_resolution_clock::now();
 
