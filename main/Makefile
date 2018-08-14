@@ -8,8 +8,8 @@ SORT = NONE
 CC = g++
 STD = -std=c++11
 CFLAGS = $(STD) -Wall -Wextra -Wpedantic
-SOURCES = $(wildcard *.cpp) $(wildcard ../selection_sort/*.cpp) $(wildcard ../insertion_sort/*.cpp)
-VPATH = . ../selection_sort ../insertion_sort
+SOURCES = $(wildcard *.cpp) $(wildcard ../selection_sort/*.cpp) $(wildcard ../insertion_sort/*.cpp) $(wildcard ../merge_sort/*.cpp)
+VPATH = . ../selection_sort ../insertion_sort ../merge_sort
 
 $(MAIN): $(notdir $(SOURCES:.cpp=.d)) $(notdir $(SOURCES:.cpp=.o))
 	$(CC) $(CFLAGS) -o $@ $(notdir $(SOURCES:.cpp=.o)) $(VPATH:%=-I%)
