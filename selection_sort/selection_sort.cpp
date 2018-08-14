@@ -1,6 +1,6 @@
 // Selection Sort Methods Implementation
 
-#include "selection_sort.hpp"
+#include "selection_sort.h"
 
 void Sort::selection (std::vector<int>& v) {
    unsigned int vsize;

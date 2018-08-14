@@ -4,7 +4,7 @@ CFLAGS = $(STD) -Wall -Wextra -Wpedantic
 SOURCES = $(wildcard *.cpp)
 INC_DIRS = .
 
-$(MAIN): $(SOURCES) $(SOURCES:.cpp=.hpp)
+$(MAIN): $(SOURCES) $(SOURCES:.cpp=.h)
 	$(CC) $(CFLAGS) -c $(SOURCES) $(INC_DIRS:%=-I%)
 	@$(MAKE) -s clean
 

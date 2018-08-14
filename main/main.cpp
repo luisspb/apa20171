@@ -1,6 +1,6 @@
 // Main function
 
-#include "main.hpp"
+#include "main.h"
 
 int main (int argc, char *argv[]) {
    std::ifstream vectorFileIn;

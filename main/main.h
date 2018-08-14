@@ -8,7 +8,7 @@
 # include <vector>
 # include <chrono>
 
-# include "insertion_sort.hpp"
-# include "selection_sort.hpp"
+# include "insertion_sort.h"
+# include "selection_sort.h"
 
 #endif

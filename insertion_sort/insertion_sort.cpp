@@ -1,6 +1,6 @@
 // Insertion Sort Methods Implementation
 
-#include "insertion_sort.hpp"
+#include "insertion_sort.h"
 
 void Sort::insertion (std::vector<int>& v) {
    unsigned int vsize;
