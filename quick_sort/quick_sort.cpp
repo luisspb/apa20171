@@ -2,7 +2,7 @@
 
 #include "quick_sort.h"
 
-void Sort::quick (std::vector<int>& v, unsigned l, unsigned r) {
+void Sort::quick (std::vector<long>& v, unsigned l, unsigned r) {
    unsigned pi;  // Pivot index
 
    if (r > l) {
@@ -12,8 +12,8 @@ void Sort::quick (std::vector<int>& v, unsigned l, unsigned r) {
    }
 }
 
-unsigned Sort::partition (std::vector<int>& v, unsigned l, unsigned h) {
-   int pivot, swap;
+unsigned Sort::partition (std::vector<long>& v, unsigned l, unsigned h) {
+   long pivot, swap;
    unsigned i, j;
 
    pivot = v[l];
@@ -31,3 +31,4 @@ unsigned Sort::partition (std::vector<int>& v, unsigned l, unsigned h) {
 
    return i;
 }
+

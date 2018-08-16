@@ -2,14 +2,14 @@
 
 #include "selection_sort.h"
 
-void Sort::selection (std::vector<int>& v) {
+void Sort::selection (std::vector<long>& v) {
    unsigned int vsize;
    unsigned int jmin, j;
-   int min;
+   long min;
 
    vsize = v.size();
 
-   for (unsigned int i = 0; i < vsize; i++) {
+   for (unsigned i = 0; i < vsize; i++) {
       min = v[i];
       jmin = i;
       for (j = i; j < vsize; j++)

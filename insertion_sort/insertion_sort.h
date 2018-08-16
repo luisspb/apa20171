@@ -6,7 +6,7 @@
 # include <vector>
 
 namespace Sort {
-   void insertion (std::vector<int>& v);
+   void insertion (std::vector<long>& v);
 }
 
 #endif

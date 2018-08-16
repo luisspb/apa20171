@@ -5,11 +5,12 @@
 int main (int argc, char *argv[]) {
    std::ifstream vectorFileIn;
    std::ofstream vectorFileOut;
-   std::vector<int> vec;
-   unsigned int i, vecSize;
+   std::vector<long> vec;
+   unsigned vecSize;
+   long buffer;
 
    if (argc > 1)
-      vectorFileIn.open (argv[1]);
+      vectorFileIn.open (argv[1], std::ios::in);
    else {
       std::cout << "\nWrong syntax. Use:\n$ ./main ../test_cases/test_file.txt" << std::endl;
       return 1;
@@ -17,15 +18,15 @@ int main (int argc, char *argv[]) {
 
    vectorFileIn >> vecSize;
 
-   while (vectorFileIn >> i)
-      vec.push_back(i);
+   while (vectorFileIn >> buffer)
+      vec.push_back(buffer);
 
    vectorFileIn.close();
 
 #ifdef DEBUG
    // Print it unsorted
    std::cout << "\nThe unsorted vector:" << std::endl;
-   for (i = 0; i < vec.size(); i++)
+   for (unsigned i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
     std::cout << std::endl;
 #else
@@ -67,14 +68,14 @@ int main (int argc, char *argv[]) {
 
    // Output the sorted vector to a file
    vectorFileOut.open ("vectorOut.txt");
-   for (i = 0; i < vec.size(); i++)
+   for (unsigned i = 0; i < vec.size(); i++)
       vectorFileOut << vec[i] << " ";
    vectorFileOut << std::endl;
 
 #ifdef DEBUG
    // Print it sorted
    std::cout << "\nThe sorted vector:" << std::endl;
-   for (i = 0; i < vec.size(); i++)
+   for (unsigned i = 0; i < vec.size(); i++)
       std::cout << vec[i] << " ";
    std::cout << std::endl;
 #else

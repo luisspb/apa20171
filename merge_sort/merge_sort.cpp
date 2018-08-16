@@ -2,7 +2,7 @@
 
 #include "merge_sort.h"
 
-void Sort::mergeSort (std::vector<int>& v, unsigned l, unsigned r) {
+void Sort::mergeSort (std::vector<long>& v, unsigned l, unsigned r) {
    unsigned middle;
 
    if (r > l) {
@@ -13,8 +13,8 @@ void Sort::mergeSort (std::vector<int>& v, unsigned l, unsigned r) {
    }
 }
 
-void Sort::merge (std::vector<int>& v, unsigned l, unsigned m, unsigned r) {
-   std::vector<int> left, right;
+void Sort::merge (std::vector<long>& v, unsigned l, unsigned m, unsigned r) {
+   std::vector<long> left, right;
    unsigned i = 0, j = 0, k;
 
    // Create left vector
@@ -37,3 +37,4 @@ void Sort::merge (std::vector<int>& v, unsigned l, unsigned m, unsigned r) {
 	 j++;
       }
 }
+
