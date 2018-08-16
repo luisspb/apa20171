@@ -84,18 +84,18 @@ int main (int argc, char *argv[]) {
 
    // Print runtime measurement
    std::cout << "\nRuntime: ";
-   auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-   if (duration)
-      std::cout << duration << " s " << std::endl;
+   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+   if (duration/1000)
+      std::cout << duration/1000 << "s" << duration % 1000 << "ms" << std::endl;
    else {
-      duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
       if (duration)
-         std::cout << duration << " ms " << std::endl;
+         std::cout << duration << "ms" << std::endl;
       else {
          duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
-         std::cout << duration << " ns " << std::endl;
+         std::cout << duration << "ns" << std::endl;
       }
    }
 
    return 0;
 }
+
