@@ -20,11 +20,11 @@ void Sort::merge (std::vector<long>& v, unsigned l, unsigned m, unsigned r) {
    // Create left vector
    for (k = l; k <= m; k++)
       left.push_back (v[k]);
-   left.push_back (INT_MAX);
+   left.push_back (LONG_MAX);
    // Create right vector
    for (k = m+1; k <= r; k++)
       right.push_back (v[k]);
-   right.push_back (INT_MAX);
+   right.push_back (LONG_MAX);
 
    // Merge algorithm
    for (k = l; k <= r; k++)

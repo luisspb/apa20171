@@ -4,7 +4,7 @@
 # define MERGE_SORT_
 
 # include <vector>
-# include <bits/stdc++.h>
+# include <climits>
 
 namespace Sort {
    void mergeSort (std::vector<long>& v, unsigned l, unsigned r);
