@@ -1,4 +1,4 @@
-// Merge Sort Class Header
+// Quick Sort Class Header
 
 #ifndef QUICK_SORT_
 # define QUICK_SORT_
@@ -11,4 +11,3 @@ namespace Sort {
 }
 
 #endif
-

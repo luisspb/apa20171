@@ -1,4 +1,4 @@
-// Merge Sort Method Implementation
+// Quick Sort Method Implementation
 
 #include "quick_sort.h"
 
@@ -31,4 +31,3 @@ unsigned Sort::partition (std::vector<long>& v, unsigned l, unsigned h) {
 
    return i;
 }
-
