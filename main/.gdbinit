@@ -3,6 +3,6 @@
 ##Init
 
 #Break 1
-break 56 
+break counting_sort.cpp:38
 run ../test_cases/vector5.in
 

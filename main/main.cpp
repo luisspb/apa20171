@@ -63,6 +63,11 @@ int main (int argc, char *argv[]) {
    Sort::quick(vec, 0, vec.size()-1);
 #endif
 
+#ifdef COUNTING
+   std::cout << "\nCounting sorting selected." << std::endl;
+   Sort::counting(vec);
+#endif
+
    // Algorithm time measurement - end
    auto end = std::chrono::high_resolution_clock::now();
 
@@ -98,4 +103,3 @@ int main (int argc, char *argv[]) {
 
    return 0;
 }
-
